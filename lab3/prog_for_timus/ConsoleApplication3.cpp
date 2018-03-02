@@ -6,27 +6,24 @@
 using namespace std;
 
 int main() {
-	int S, N;
+	int s, n;
 	int mn = 0, sum = 0;
 	int x;
 	bool answer = true;
-
-	cin >> S >> N;
-
-	for (int i = 1; i <= S; i++) {
+	cin >> s >> n;
+	for (int i = 1; i <= s; i++) {
 		cin >> x;
 		sum += x;
-		if (sum - i - mn > N) answer = false;
+		if (sum - i - mn > n) {
+			answer = false;
+		}
 		cout << mn << "  " << sum - i << endl;
 		mn = min(mn, sum - i);
-		}
-
+	}
 	if (answer) {
 		cout << "YES" << endl;
-	}
-	else {
+	} else {
 		cout << "NO" << endl;
 	}
-
 	return 0;
 }

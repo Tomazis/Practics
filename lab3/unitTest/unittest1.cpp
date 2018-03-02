@@ -37,5 +37,23 @@ namespace UnitTest1
 
 			}
 		}
+		TEST_METHOD(TestMethod5)
+		{
+			try {
+				bool ok = Sequence(2, 5, std::vector<int>{1, 0, 5, 3});
+			}
+			catch (std::out_of_range ex) {
+
+			}
+		}
+		TEST_METHOD(TestMethod6)
+		{
+			try {
+				bool ok = Sequence(4, 5, std::vector<int>{-11, 0, 5, 3});
+			}
+			catch (std::out_of_range ex) {
+
+			}
+		}
 	};
 }
